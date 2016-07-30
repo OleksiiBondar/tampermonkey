@@ -1,0 +1,28 @@
+# Created by .ignore support plugin (hsz.mobi)
+# Eclipse
+.classpath
+.project
+.metadata
+.checkstyle
+.settings/
+.springBeans
+.checkstyle
+
+# Intellij
+.idea/
+*.iml
+*.iws
+atlassian-ide-plugin.xml
+#out/
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# Gradle
+.gradle/
+build/
+

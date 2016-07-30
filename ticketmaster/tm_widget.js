@@ -30,8 +30,8 @@ $(document).ready(function () {
         var arrivalAirport = 'MIA';
         var $flightContent = $(".flightsSlick");
         findFlights(departureDate, returnDate, departureAirport, arrivalAirport, function (flights) {
-            $.each(flights, function (index, offer) {
-                $flightContent.append('<div><a target="_blank" href="' + offer.detailsUrl + '"><img src="https://www.expedia.com/_dms/header/logo.svg?locale=en_US&amp;siteid=1"/></a><div class="details"><span>' + offer.origin + ' - ' + offer.destination + '</span><span style="margin-left: 35px">' + offer.price + '</span></div></div>'); });
+            $.each(flights, function (index, flight) {
+                $flightContent.append('<div><a target="_blank" href="' + flight.detailsUrl + '"><img src="https://www.expedia.com/_dms/header/logo.svg?locale=en_US&amp;siteid=1"/></a><div class="details"><span>' + flight.airpath + ' Airline=' +flight.airline + '</span><span style="margin-left: 35px">' + flight.price + '</span></div></div>'); });
             $flightContent.slick({
                 arrows: false,
                 slidesToShow: 2,
@@ -58,13 +58,14 @@ function prepareData(data) {
     var flights = [];
     $.each(data.offers, function (index, offer) {
         if (index < 10) {
-            var destination;
-            var origin;
             $.each(data.legs, function (index, leg) {
                 if (jQuery.inArray(leg.legId, offer.legIds)) {
-                    destination = leg.segments[0].arrivalAirportCode;
-                    origin = leg.segments[0].departureAirportCode;
-                    flights.push(flight(origin, destination, offer.totalFarePrice.formattedPrice, offer.detailsUrl));
+                    var fullPath = leg.segments[0].departureAirportCode;
+                    $.each(leg.segments, function (index, segment) {
+                        fullPath+='-';
+                        fullPath+=segment.arrivalAirportCode;
+                    });
+                    flights.push(flight(fullPath, leg.segments[0].airlineName, offer.totalFarePrice.formattedPrice, offer.detailsUrl));
                     return false;
                 }
             });
@@ -73,10 +74,10 @@ function prepareData(data) {
     return flights;
 }
 
-function flight(origin, destination, price, url) {
+function flight(airpath, airline, price, url) {
     var result = {};
-    result.origin = origin;
-    result.destination = destination;
+    result.airpath = airpath;
+    result.airline = airline;
     result.price = price;
     result.detailsUrl = url;
     return result;
@@ -91,6 +92,5 @@ function convertDate(inputDate) {
     
     return inputDateArr[2] + '-' + inputDateArr[0] + '-' + inputDateArr[1];
 }
-
 
 

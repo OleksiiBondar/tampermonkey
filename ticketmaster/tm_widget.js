@@ -35,6 +35,7 @@ function findFlights(departureDate, returnDate, departureAirport, arrivalAirport
     var restApiUrl = 'http://terminal2.expedia.com:80/x/mflights/search?departureDate=' + departureDate + '&returnDate=' + returnDate + '&departureAirport=' + departureAirport + '&arrivalAirport=' + arrivalAirport + '&apikey=rxrUZKoPlSKZXN4PPZQfDgOK2dMRyG7Z';
     var content = $(".flightsSlick");
     $.getJSON(restApiUrl, function (data) {
+
         $.each(data.offers, function (index, offer) {
             if (index < 10) {
                 content.append('<div><a target="_blank" href="' + offer.detailsUrl + '"><img src="https://www.expedia.com/_dms/header/logo.svg?locale=en_US&amp;siteid=1"/></a></div>');
@@ -55,7 +56,47 @@ function findFlights(departureDate, returnDate, departureAirport, arrivalAirport
     });
 }
 
+function findFlights(departureDate, returnDate, departureAirport, arrivalAirport) {
+    var restApiUrl = 'http://terminal2.expedia.com:80/x/mflights/search?departureDate=' + departureDate + '&returnDate=' + returnDate + '&departureAirport=' + departureAirport + '&arrivalAirport=' + arrivalAirport + '&apikey=rxrUZKoPlSKZXN4PPZQfDgOK2dMRyG7Z';
+    var content = $(".flightsSlick");
+    $.getJSON(restApiUrl, function (data) {
+        return prepareData(data);
+    });
+        
+}
 
+function prepareData(data) {
+    var flights = [];
+
+    $.each(data.offers, function(index, offer) {
+        if (index < 10) {
+            var destination;
+            var origin;
+            $.each(data.legs, function(index, leg) {
+                if (jQuery.inArray(leg.legId, offer.legIds) {
+                        destination = leg.segments[0].arrivalAirportCode;
+                        origin = leg.segments[0].departureAirportCode;
+                        flights.push(flight(origin, destination, offer.baseFarePrice.formattedPrice));
+                        return false;
+                    }
+                }
+            });
+
+        } else {
+            return false;
+        }
+        return flights;
+    });
+
+});
+
+}
+
+function flight(origin, destination, price) {
+    this.origin = origin;
+    this.destination = destination;
+    this.price = price;
+}
 
 
 

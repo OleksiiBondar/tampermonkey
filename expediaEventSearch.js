@@ -5,7 +5,7 @@
 // @description  try to take over the world!
 // @author       Oleksii Bondar
 // @grant        GM_addStyle
-// @match        http://www.ticketmaster.com/event*
+// @match        https://concerts.livenation.com/checkout/order*
 // @require      http://code.jquery.com/jquery-latest.js
 // @require      https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js
 
@@ -37,12 +37,16 @@ $.notify({
 
 $(document).ready(function() {
 
-    var departureDate = '2016-10-10';
-    var returnDate = '2016-10-12';
+    var departureDate = convertDate(localStorage.getItem('departDate'));
+    var returnDate = convertDate(localStorage.getItem('returnDate'));
+
+    console.log('departDate=' + departureDate);
+    console.log('returnDate=' + returnDate);
+    
     var departureAirport = 'SEA';
     var arrivalAirport = 'MIA';
 
-    var restApiUrl = 'http://terminal2.expedia.com:80/x/mflights/search?departureDate=' + departureDate + '&returnDate=' + returnDate + '&departureAirport=' + departureAirport + '&arrivalAirport=' + arrivalAirport + '&apikey=rxrUZKoPlSKZXN4PPZQfDgOK2dMRyG7Z';
+    var restApiUrl = 'http://terminal2.expedia.com:80/x/mflights/search?departureDate=' + departureDate + '&returnDate=' + returnDate + '&departureAirport=' + departureAirport + '&arrivalAirport=' + arrivalAirport +'&maxOfferCount=10&apikey=rxrUZKoPlSKZXN4PPZQfDgOK2dMRyG7Z';
 
 
     $.getJSON(restApiUrl, function(data) {
@@ -61,7 +65,14 @@ $(document).ready(function() {
     });
 });
 
-
+//incomming format '07/30/2016'
+//expected date format '2016-07-30'
+function convertDate(inputDate) {
+    var inputDateLocal = inputDate.replace('/', '-').replace('/', '-').replace('/', '-');
+    var inputDateArr = inputDateLocal.split('-');
+    
+    return inputDateArr[2] + '-' + inputDateArr[0] + '-' + inputDateArr[1];
+}
 
 
 

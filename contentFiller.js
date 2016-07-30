@@ -8,14 +8,13 @@
 // @match        https://www.expedia.com/Details?action*
 // @require      http://code.jquery.com/jquery-latest.js
 // @require      https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js
-// @require      https://raw.githubusercontent.com/carhartl/jquery-cookie/master/src/jquery.cookie.js
 
 // ==/UserScript==
-GM_addStyle(".notifyjs-foo-base { opacity: 0.85; width: 400px; background: #69CEF0; padding: 5px; border-radius: 10px; color: white; } .notifyjs-foo-base .p {  float: left; margin: 10px 0 0 10px; text-align: right; color: white; }");
+GM_addStyle(".notifyjs-foo-base { opacity: 0.85; width: 400px; background: #EBF21B; padding: 5px; border-radius: 10px; color: white; link: white; vlink: white; alink: white; } .notifyjs-foo-base .div {  float: left; margin: 10px 0 0 10px; text-align: right; color: white; }");
 
 $.notify.addStyle('foo', {
   html: 
-        "<p>Hot Deals on TicketMaster<p id='results'/></p>"
+        "<div id='results'></div>"
 });
 
 
@@ -33,16 +32,42 @@ $.notify({
 
 });
 
-$.getJSON( "https://app.ticketmaster.com/discovery/v2/events.json?apikey=SLFZ5pYZ6UlXoUpRG5IJhtGeE4ohRpGs&city=Austin&countryCode=US&onsaleStartDateTime=2016-10-10T20:15:00Z&onsaleEndDateTime=2017-12-12T00:00:00Z", function(data) {
-    
-    var contentTable = '';
-    $.each(data._embedded.events, function(index, event) {
-       contentTable += '<tr><td><a href="'+ event.url + '">' + event.name + '</a></td></tr>';
-    });
+var departDate;
+var returnDate;
+var returnAirport;
+var restApiUrl;
 
+$(document).ready(function () {  
+    var departDateLocal = localStorage.getItem('departDate').replace('/', '-').replace('/', '-').replace('/', '-');
+    var returnDateLocal = localStorage.getItem('returnDate').replace('/', '-').replace('/', '-').replace('/', '-');
     
-    console.log(contentTable);
-    $("#results").append(contentTable);
+    var departDateArr = departDateLocal.split('-');
+    departDate = departDateArr[2] + '-' + departDateArr[0] + '-' + departDateArr[1];
+    
+    var returnDateArr = returnDateLocal.split('-');
+    returnDate = returnDateArr[2] + '-' + returnDateArr[0] + '-' + returnDateArr[1];
+    
+    var returnAirportLocal = localStorage.getItem('returnAirport');
+    returnAirport = returnAirportLocal.split(' ')[0];
+    
+    restApiUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=SLFZ5pYZ6UlXoUpRG5IJhtGeE4ohRpGs&city=' + returnAirport + '&countryCode=US&startDateTime='+departDate+'T00:00:00Z&endDateTime='+returnDate+'T00:00:00Z&size=10';
+    console.log(departDate + ' ' + returnDate + ' '+ returnAirport);
+    console.log(restApiUrl);
+    
+    $.getJSON( restApiUrl, function(data) {
+        var contentTable = '';
+        $.each(data._embedded.events, function(index, event) {
+            contentTable += '<tr><td><a href="'+ event.url + '">' + event.name + '</a></td></tr>';
+        });
+        $("#results").append(contentTable);
+        console.log(contentTable);
+    });
 });
+
+
+
+
+
+
 
 

@@ -13,5 +13,6 @@
 $(document).ready(function () {  
     localStorage.setItem('departDate' ,$('#calendar_from_input').val()); 
     localStorage.setItem('returnDate', $('#calendar_to_input').val()); 
+
 });
 

@@ -5,7 +5,7 @@
 // @description  try to take over the world!
 // @author       Andrii Golovei
 // @grant        GM_addStyle
-// @match        http://www.ticketmaster.com/*
+// @match        http://www.ticketmaster.com/event/*
 // @require      http://code.jquery.com/jquery-latest.js
 // @require      https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js
 // @require      http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js

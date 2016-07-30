@@ -1,1 +1,1 @@
-# tampermonkey
+# Tampermonkey usage examples

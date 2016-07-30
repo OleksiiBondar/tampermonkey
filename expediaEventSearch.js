@@ -50,7 +50,7 @@ $(document).ready(function() {
         var contentTable = '<table>';
         $.each(data.offers, function(index, offer) {
             if (index < 10) {
-                contentTable += '<tr><td><a target="_blank" href="' + offer.detailsUrl + '">link#' + (index+1) + '</a></td></tr>';
+                contentTable += '<tr><td><a target="_blank" href="' + offer.detailsUrl + '">From=' + departureAirport + ' To='+arrivalAirport+' Price='+offer.baseFarePrice.formattedPrice+'</a></td></tr>';
             } else {
                 return false;
             }

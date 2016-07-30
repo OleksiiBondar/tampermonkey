@@ -27,23 +27,13 @@ $(document).ready(function () {
         var returnDate = '2016-10-12';
         var departureAirport = 'SEA';
         var arrivalAirport = 'MIA';
-        findFlights(departureDate, returnDate, departureAirport, arrivalAirport);
-    }
-});
-
-function findFlights(departureDate, returnDate, departureAirport, arrivalAirport) {
-    var restApiUrl = 'http://terminal2.expedia.com:80/x/mflights/search?departureDate=' + departureDate + '&returnDate=' + returnDate + '&departureAirport=' + departureAirport + '&arrivalAirport=' + arrivalAirport + '&apikey=rxrUZKoPlSKZXN4PPZQfDgOK2dMRyG7Z';
-    var content = $(".flightsSlick");
-    $.getJSON(restApiUrl, function (data) {
-
-        $.each(data.offers, function (index, offer) {
-            if (index < 10) {
-                content.append('<div><a target="_blank" href="' + offer.detailsUrl + '"><img src="https://www.expedia.com/_dms/header/logo.svg?locale=en_US&amp;siteid=1"/></a></div>');
-            } else {
-                return false;
-            }
+        var flights = findFlights(departureDate, returnDate, departureAirport, arrivalAirport);
+        var flightContent = $(".flightsSlick");
+        $.each(flights, function (index, offer) {
+            flightContent.append('<div><a target="_blank" href="' + offer.detailsUrl + '"><img src="https://www.expedia.com/_dms/header/logo.svg?locale=en_US&amp;siteid=1"/></a></div>');
+            console.log("Adding "+ offer.origin);
         });
-        content.slick({
+        flightContent.slick({
             arrows: false,
             slidesToShow: 2,
             slidesToScroll: 1,
@@ -53,49 +43,46 @@ function findFlights(departureDate, returnDate, departureAirport, arrivalAirport
             autoplay: true,
             autoplaySpeed: 2000
         });
-    });
-}
+    }
+});
+
 
 function findFlights(departureDate, returnDate, departureAirport, arrivalAirport) {
     var restApiUrl = 'http://terminal2.expedia.com:80/x/mflights/search?departureDate=' + departureDate + '&returnDate=' + returnDate + '&departureAirport=' + departureAirport + '&arrivalAirport=' + arrivalAirport + '&apikey=rxrUZKoPlSKZXN4PPZQfDgOK2dMRyG7Z';
-    var content = $(".flightsSlick");
     $.getJSON(restApiUrl, function (data) {
         return prepareData(data);
     });
-        
+
 }
 
 function prepareData(data) {
     var flights = [];
-
-    $.each(data.offers, function(index, offer) {
+    $.each(data.offers, function (index, offer) {
         if (index < 10) {
             var destination;
             var origin;
-            $.each(data.legs, function(index, leg) {
-                if (jQuery.inArray(leg.legId, offer.legIds) {
-                        destination = leg.segments[0].arrivalAirportCode;
-                        origin = leg.segments[0].departureAirportCode;
-                        flights.push(flight(origin, destination, offer.baseFarePrice.formattedPrice));
-                        return false;
-                    }
+            $.each(data.legs, function (index, leg) {
+                if (jQuery.inArray(leg.legId, offer.legIds)){
+                    destination = leg.segments[0].arrivalAirportCode;
+                    origin = leg.segments[0].departureAirportCode;
+                    flights.push(flight(origin, destination, offer.baseFarePrice.formattedPrice));
+                    return false;
+                } else {
+                    return false;
                 }
             });
-
-        } else {
-            return false;
         }
-        return flights;
     });
 
-});
-
+    return flights;
 }
 
 function flight(origin, destination, price) {
-    this.origin = origin;
-    this.destination = destination;
-    this.price = price;
+    var result = {};
+    result.origin = origin;
+    result.destination = destination;
+    result.price = price;
+    return result;
 }
 
 

@@ -26,7 +26,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22758f76-6f06-402a-a0e9-865f497422b7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ticketmaster/tm_widget.js" afterPath="$PROJECT_DIR$/ticketmaster/tm_widget.js" />
     </list>
     <ignored path="tampermonkey.iws" />
@@ -49,13 +48,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tm_widget.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tm_widget.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ticketmaster/tm_widget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+            <state relative-caret-position="185">
+              <caret line="29" column="101" selection-start-line="29" selection-start-column="101" selection-end-line="29" selection-end-column="101" />
               <folding>
-                <marker date="1469911954083" expanded="true" signature="5698:5733" ph="..." />
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1469913948750" expanded="true" signature="5697:5732" ph="..." />
               </folding>
             </state>
           </provider>
@@ -71,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state relative-caret-position="270">
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -84,10 +84,9 @@
       <file leaf-file-name="scratch_62.json" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_62.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3192" column="23" selection-start-line="3192" selection-start-column="23" selection-end-line="3192" selection-end-column="23" />
+            <state relative-caret-position="234">
+              <caret line="3207" column="31" selection-start-line="3207" selection-start-column="17" selection-end-line="3207" selection-end-column="31" />
               <folding>
-                <element signature="e#15#155921#0" expanded="false" />
                 <element signature="e#25#2684#0" expanded="false" />
                 <element signature="e#343#2149#0" expanded="false" />
                 <element signature="e#361#2135#0" expanded="false" />
@@ -400,18 +399,21 @@
                 <element signature="e#154343#154493#0" expanded="false" />
                 <element signature="e#154659#154808#0" expanded="false" />
                 <element signature="e#155417#155905#0" expanded="false" />
+                <element signature="e#155973#156091#0" expanded="false" />
                 <element signature="e#156190#156375#0" expanded="false" />
-                <element signature="e#156444#156629#0" expanded="false" />
                 <element signature="e#156673#157556#0" expanded="false" />
                 <element signature="e#156691#157542#0" expanded="false" />
                 <element signature="e#156779#157004#0" expanded="false" />
                 <element signature="e#157040#157265#0" expanded="false" />
                 <element signature="e#157302#157524#0" expanded="false" />
-                <element signature="e#157601#157786#0" expanded="false" />
+                <element signature="e#157881#158063#0" expanded="false" />
+                <element signature="e#158120#158299#0" expanded="false" />
+                <element signature="e#158566#158924#0" expanded="false" />
                 <element signature="e#158584#158738#0" expanded="false" />
                 <element signature="e#158606#158720#0" expanded="false" />
                 <element signature="e#158756#158910#0" expanded="false" />
                 <element signature="e#158778#158892#0" expanded="false" />
+                <element signature="e#159448#159713#0" expanded="false" />
                 <element signature="e#159475#159658#0" expanded="false" />
                 <element signature="e#159508#159640#0" expanded="false" />
                 <element signature="e#160129#164435#0" expanded="false" />
@@ -2933,38 +2935,7 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tampermonkey" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tampermonkey" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tampermonkey" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tampermonkey" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tampermonkey" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticketmaster" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scratches" />
       <pane id="PackagesPane" />
@@ -3505,12 +3476,12 @@
       <option name="presentableId" value="Default" />
       <updated>1469899229754</updated>
       <workItem from="1469899235184" duration="9811000" />
-      <workItem from="1469911224818" duration="880000" />
+      <workItem from="1469911224818" duration="2744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10691000" />
+    <option name="totallyTimeSpent" value="12555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1368" height="743" extended-state="6" />
@@ -3530,7 +3501,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phaser Chains" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3568,7 +3539,8 @@
         <state relative-caret-position="252">
           <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding>
-            <marker date="1469911954083" expanded="true" signature="5698:5733" ph="..." />
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1469913948750" expanded="true" signature="5697:5732" ph="..." />
           </folding>
         </state>
       </provider>
@@ -3594,7 +3566,6 @@
         <state relative-caret-position="72">
           <caret line="3192" column="23" selection-start-line="3192" selection-start-column="23" selection-end-line="3192" selection-end-column="23" />
           <folding>
-            <element signature="e#15#155921#0" expanded="false" />
             <element signature="e#25#2684#0" expanded="false" />
             <element signature="e#343#2149#0" expanded="false" />
             <element signature="e#361#2135#0" expanded="false" />
@@ -3907,18 +3878,21 @@
             <element signature="e#154343#154493#0" expanded="false" />
             <element signature="e#154659#154808#0" expanded="false" />
             <element signature="e#155417#155905#0" expanded="false" />
+            <element signature="e#155973#156091#0" expanded="false" />
             <element signature="e#156190#156375#0" expanded="false" />
-            <element signature="e#156444#156629#0" expanded="false" />
             <element signature="e#156673#157556#0" expanded="false" />
             <element signature="e#156691#157542#0" expanded="false" />
             <element signature="e#156779#157004#0" expanded="false" />
             <element signature="e#157040#157265#0" expanded="false" />
             <element signature="e#157302#157524#0" expanded="false" />
-            <element signature="e#157601#157786#0" expanded="false" />
+            <element signature="e#157881#158063#0" expanded="false" />
+            <element signature="e#158120#158299#0" expanded="false" />
+            <element signature="e#158566#158924#0" expanded="false" />
             <element signature="e#158584#158738#0" expanded="false" />
             <element signature="e#158606#158720#0" expanded="false" />
             <element signature="e#158756#158910#0" expanded="false" />
             <element signature="e#158778#158892#0" expanded="false" />
+            <element signature="e#159448#159713#0" expanded="false" />
             <element signature="e#159475#159658#0" expanded="false" />
             <element signature="e#159508#159640#0" expanded="false" />
             <element signature="e#160129#164435#0" expanded="false" />
@@ -6441,12 +6415,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.exclude">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_62.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3192" column="23" selection-start-line="3192" selection-start-column="23" selection-end-line="3192" selection-end-column="23" />
+        <state relative-caret-position="234">
+          <caret line="3207" column="31" selection-start-line="3207" selection-start-column="17" selection-end-line="3207" selection-end-column="31" />
           <folding>
-            <element signature="e#15#155921#0" expanded="false" />
             <element signature="e#25#2684#0" expanded="false" />
             <element signature="e#343#2149#0" expanded="false" />
             <element signature="e#361#2135#0" expanded="false" />
@@ -6759,18 +6748,21 @@
             <element signature="e#154343#154493#0" expanded="false" />
             <element signature="e#154659#154808#0" expanded="false" />
             <element signature="e#155417#155905#0" expanded="false" />
+            <element signature="e#155973#156091#0" expanded="false" />
             <element signature="e#156190#156375#0" expanded="false" />
-            <element signature="e#156444#156629#0" expanded="false" />
             <element signature="e#156673#157556#0" expanded="false" />
             <element signature="e#156691#157542#0" expanded="false" />
             <element signature="e#156779#157004#0" expanded="false" />
             <element signature="e#157040#157265#0" expanded="false" />
             <element signature="e#157302#157524#0" expanded="false" />
-            <element signature="e#157601#157786#0" expanded="false" />
+            <element signature="e#157881#158063#0" expanded="false" />
+            <element signature="e#158120#158299#0" expanded="false" />
+            <element signature="e#158566#158924#0" expanded="false" />
             <element signature="e#158584#158738#0" expanded="false" />
             <element signature="e#158606#158720#0" expanded="false" />
             <element signature="e#158756#158910#0" expanded="false" />
             <element signature="e#158778#158892#0" expanded="false" />
+            <element signature="e#159448#159713#0" expanded="false" />
             <element signature="e#159475#159658#0" expanded="false" />
             <element signature="e#159508#159640#0" expanded="false" />
             <element signature="e#160129#164435#0" expanded="false" />
@@ -9186,29 +9178,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.exclude">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ticketmaster/tm_widget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        <state relative-caret-position="185">
+          <caret line="29" column="101" selection-start-line="29" selection-start-column="101" selection-end-line="29" selection-end-column="101" />
           <folding>
-            <marker date="1469911954083" expanded="true" signature="5698:5733" ph="..." />
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1469913948750" expanded="true" signature="5697:5732" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>

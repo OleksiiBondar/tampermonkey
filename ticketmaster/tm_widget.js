@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         DevJam
+// @name         SearchExpediaFlights
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
@@ -22,8 +22,10 @@ $(document).ready(function () {
     if (artistContainer) {
         var location = $("#artist_location span").first().text();
         artistContainer.after($("<div id='expedia'><h2><span style='color: #009cde; margin-bottom: 5px;'>You may also interested in flights to " + location + " </span></h2><div id='expediaFlights'><div class='flightsSlick'></div></div></div>"));
-        var departureDate = '2016-10-10';
-        var returnDate = '2016-10-12';
+
+        var departureDate = convertDate(localStorage.getItem('departDate'));
+        var returnDate = convertDate(localStorage.getItem('returnDate'));
+        
         var departureAirport = 'SEA';
         var arrivalAirport = 'MIA';
         var $flightContent = $(".flightsSlick");
@@ -82,6 +84,14 @@ function flight(origin, destination, price, url) {
 }
 
 
+//incomming format '07/30/2016'
+//expected date format '2016-07-30'
+function convertDate(inputDate) {
+    var inputDateLocal = inputDate.replace('/', '-').replace('/', '-').replace('/', '-');
+    var inputDateArr = inputDateLocal.split('-');
+    
+    return inputDateArr[2] + '-' + inputDateArr[0] + '-' + inputDateArr[1];
+}
 
 
 

@@ -32,25 +32,13 @@ $.notify({
 
 });
 
-var departDate;
-var returnDate;
-var returnAirport;
-var restApiUrl;
-
 $(document).ready(function () {  
-    var departDateLocal = localStorage.getItem('departDate').replace('/', '-').replace('/', '-').replace('/', '-');
-    var returnDateLocal = localStorage.getItem('returnDate').replace('/', '-').replace('/', '-').replace('/', '-');
+    var departDate = parseDate(localStorage.getItem('departDate'));
+    var returnDate = parseDate(localStorage.getItem('returnDate'));
     
-    var departDateArr = departDateLocal.split('-');
-    departDate = departDateArr[2] + '-' + departDateArr[0] + '-' + departDateArr[1];
+    var returnAirport = localStorage.getItem('returnAirport').split(' ')[0];
     
-    var returnDateArr = returnDateLocal.split('-');
-    returnDate = returnDateArr[2] + '-' + returnDateArr[0] + '-' + returnDateArr[1];
-    
-    var returnAirportLocal = localStorage.getItem('returnAirport');
-    returnAirport = returnAirportLocal.split(' ')[0];
-    
-    restApiUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=SLFZ5pYZ6UlXoUpRG5IJhtGeE4ohRpGs&city=' + returnAirport + '&countryCode=US&startDateTime='+departDate+'T00:00:00Z&endDateTime='+returnDate+'T00:00:00Z&size=10';
+    var restApiUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=SLFZ5pYZ6UlXoUpRG5IJhtGeE4ohRpGs&city='+returnAirport+ '&countryCode=US&startDateTime='+departDate+'T00:00:00Z&endDateTime='+returnDate+'T00:00:00Z&size=10';
     console.log(departDate + ' ' + returnDate + ' '+ returnAirport);
     console.log(restApiUrl);
     
@@ -63,6 +51,13 @@ $(document).ready(function () {
         console.log(contentTable);
     });
 });
+
+function parseDate(inputDate) {
+    var inputDateLocal = inputDate.replace('/', '-').replace('/', '-').replace('/', '-');
+    var inputDateArr = inputDateLocal.split('-');
+    
+    return inputDateArr[2] + '-' + inputDateArr[0] + '-' + inputDateArr[1];
+}
 
 
 

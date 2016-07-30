@@ -10,8 +10,7 @@
 // @require      https://raw.githubusercontent.com/carhartl/jquery-cookie/master/src/jquery.cookie.js
 // ==/UserScript==
 
-$.cookie('author', 'alex');
-$.cookie('startDate', $('#flight-departing').val());
-var endDate = $('#flight-returning').val();
-$.cookie('endDate', endDate);
-$.cookie('destination', $('#flight-destination').val());
+$.cookie('author', 'alex', { expires: 7, path: '/' });
+$.cookie('departDate', $('#departDate').val(), { expires: 7, path: '/' });
+$.cookie('returnDate', $('#returnDate').val(), { expires: 7, path: '/' });
+$.cookie('destination', $('#returnAirport').val(), { expires: 7, path: '/' });

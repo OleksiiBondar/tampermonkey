@@ -5,7 +5,7 @@
 // @description  try to take over the world!
 // @author       Oleksii Bondar
 // @grant        GM_addStyle
-// @match        http://hackathon.expedia.com/directory*
+// @match        https://www.expedia.com/Details?action*
 // @require      http://code.jquery.com/jquery-latest.js
 // @require      https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js
 // @require      https://raw.githubusercontent.com/carhartl/jquery-cookie/master/src/jquery.cookie.js

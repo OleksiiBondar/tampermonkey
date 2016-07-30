@@ -31,8 +31,7 @@ $(document).ready(function () {
         var $flightContent = $(".flightsSlick");
         findFlights(departureDate, returnDate, departureAirport, arrivalAirport, function (flights) {
             $.each(flights, function (index, offer) {
-                $flightContent.append('<div><a target="_blank" href="' + offer.detailsUrl + '"><img src="https://www.expedia.com/_dms/header/logo.svg?locale=en_US&amp;siteid=1"/></a><div class="flightPrice">' + offer.price + '</div></div>');
-            });
+                $flightContent.append('<div><a target="_blank" href="' + offer.detailsUrl + '"><img src="https://www.expedia.com/_dms/header/logo.svg?locale=en_US&amp;siteid=1"/></a><div class="details"><span>' + offer.origin + ' - ' + offer.destination + '</span><span style="margin-left: 35px">' + offer.price + '</span></div></div>'); });
             $flightContent.slick({
                 arrows: false,
                 slidesToShow: 2,

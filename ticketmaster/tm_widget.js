@@ -21,17 +21,18 @@ $(document).ready(function () {
     var artistContainer = $("#artistContainer");
     if (artistContainer) {
         var location = $("#artist_location span").first().text();
-        artistContainer.after($("<div id='expedia'><h2><span style='color: #009cde; margin-bottom: 5px;'>You may also interested in flights to " + location + " </span></h2><div id='expediaFlights'><div class='flightsSlick'></div></div></div>"));
+        artistContainer.after($("<div id='expedia'><h2><span style='color: #009cde; margin-bottom: 5px;'>You might be also interested in flights to " + location + " </span></h2><div id='expediaFlights'><div class='flightsSlick'></div></div></div>"));
 
         var departureDate = convertDate(localStorage.getItem('departDate'));
         var returnDate = convertDate(localStorage.getItem('returnDate'));
-        
+
         var departureAirport = 'SEA';
         var arrivalAirport = 'MIA';
         var $flightContent = $(".flightsSlick");
         findFlights(departureDate, returnDate, departureAirport, arrivalAirport, function (flights) {
             $.each(flights, function (index, flight) {
-                $flightContent.append('<div><a target="_blank" href="' + flight.detailsUrl + '"><img src="https://www.expedia.com/_dms/header/logo.svg?locale=en_US&amp;siteid=1"/></a><div class="details"><span>' + flight.airpath + ' Airline=' +flight.airline + '</span><span style="margin-left: 35px">' + flight.price + '</span></div></div>'); });
+                $flightContent.append('<div><a target="_blank" href="' + flight.detailsUrl + '"><img style="width: 300px;" src="https://kaggle2.blob.core.windows.net/competitions/kaggle/3504/media/expedia2.jpg"/></a><div class="details"><span>' + flight.airline + '</span><br><span>' + flight.airpath + '</span><br><span>' + flight.price + '</span></div></div>');
+            });
             $flightContent.slick({
                 arrows: false,
                 slidesToShow: 2,

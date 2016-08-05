@@ -2,7 +2,6 @@
 // @name         TM DevJam: Ticketmaster - Dates data capture
 // @author       Oleksii Bondar, Andrii Golovei, Arthur Kiselev
 // @namespace    tmdj
-// @grant        GM_addStyle
 // @match        http://www.ticketmaster.com/
 // @require      http://code.jquery.com/jquery-latest.js
 // ==/UserScript==

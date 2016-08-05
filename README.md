@@ -1,3 +1,3 @@
-# Cross sell wigets mock-ups for Ticketmaster x Expedia
+# Cross-sell wigets mock-ups for Ticketmaster x Expedia
 
 Please note that examples are for demonstration purposes only.

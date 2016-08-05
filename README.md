@@ -1,1 +1,3 @@
-# Tampermonkey usage examples
+# Cross sell wigets mock-ups for Ticketmaster x Expedia
+
+Please note that examples are for demonstration purposes only.
